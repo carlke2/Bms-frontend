@@ -22,10 +22,6 @@ import {
   Truck,
   RadioTower as Broadcast,
   Fuel as GasPump,
-  Ambulance,
-  UserCheck,
-  Activity,
-  History as HistoryIcon,
   Package,
   FileBarChart2 as FileBarChart,
 } from 'lucide-react';
@@ -87,18 +83,6 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
     title: 'Partner',
     items: [
       { label: 'Partner Dashboard', path: '/partner/dashboard', Icon: SquaresFour, roles: ['PARTNER'] },
-    ],
-  },
-  {
-    title: 'Field Operations',
-    items: [
-      { label: 'Dashboard', path: '/driver/dashboard', Icon: SquaresFour, roles: ['DRIVER'] },
-      { label: 'Assignment', path: '/operator/assignment', Icon: Ambulance, roles: ['DRIVER', 'EMT', 'NURSE'] },
-      { label: 'Crew', path: '/operator/crew', Icon: UserCheck, roles: ['DRIVER', 'EMT', 'NURSE'] },
-      { label: 'Activity', path: '/operator/activity', Icon: Activity, roles: ['DRIVER', 'EMT', 'NURSE'] },
-      { label: 'History', path: '/operator/history', Icon: HistoryIcon, roles: ['DRIVER', 'EMT', 'NURSE'] },
-      { label: 'Inventory', path: '/operator/inventory', Icon: Package, roles: ['DRIVER', 'EMT', 'NURSE'] },
-      { label: 'Vehicle Checklist', path: '/operator/checklist', Icon: ClipboardText, roles: ['DRIVER', 'EMT', 'NURSE'] },
     ],
   },
   {

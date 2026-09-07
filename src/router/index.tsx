@@ -31,16 +31,6 @@ const StandbyPage = lazy(() => import('@/pages/dispatcher/StandbyPage'));
 const PartnerAmbulancesPage = lazy(() => import('@/pages/admin/PartnerAmbulancesPage'));
 const GbvDashboardPage = lazy(() => import('@/pages/gbv/GbvDashboardPage'));
 const GbvCaseDetailPage = lazy(() => import('@/pages/gbv/GbvCaseDetailPage'));
-const DriverDashboardPage = lazy(() => import('@/pages/driver/DriverDashboardPage'));
-const OperatorNavigatePage = lazy(() => import('@/pages/operator/NavigatePage'));
-const OperatorAssignmentPage = lazy(() => import('@/pages/operator/AssignmentPage'));
-const OperatorCrewPage = lazy(() => import('@/pages/operator/CrewPage'));
-const OperatorActivityPage = lazy(() => import('@/pages/operator/ActivityPage'));
-const OperatorHistoryPage = lazy(() => import('@/pages/operator/HistoryPage'));
-const OperatorPatientDataPage = lazy(() => import('@/pages/operator/PatientDataPage'));
-const OperatorPatientCareReportPage = lazy(() => import('@/pages/operator/PatientCareReportPage'));
-const OperatorInventoryPage = lazy(() => import('@/pages/operator/InventoryPage'));
-const OperatorChecklistPage = lazy(() => import('@/pages/operator/ChecklistPage'));
 const ProfilePage = lazy(() => import('@/pages/shared/ProfilePage'));
 // Unauthenticated read-only display for the call-centre TV (token-gated).
 const WallboardDisplayPage = lazy(() => import('@/pages/public/WallboardDisplayPage'));
@@ -274,90 +264,6 @@ export const router = createBrowserRouter([
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
             <GbvCaseDetailPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'driver/dashboard',
-        element: (
-          <RoleGuard allowed={['DRIVER']}>
-            <DriverDashboardPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator',
-        element: <Navigate to="/operator/assignment" replace />,
-      },
-      {
-        path: 'operator/navigate',
-        element: (
-          <RoleGuard allowed={['DRIVER']}>
-            <OperatorNavigatePage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/assignment',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorAssignmentPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/crew',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorCrewPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/activity',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorActivityPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/history',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorHistoryPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/inventory',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorInventoryPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/checklist',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorChecklistPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/tasks/:taskId/patient-data',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorPatientDataPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'operator/tasks/:taskId/patient-care-report',
-        element: (
-          <RoleGuard allowed={['DRIVER', 'EMT', 'NURSE']}>
-            <OperatorPatientCareReportPage />
           </RoleGuard>
         ),
       },
