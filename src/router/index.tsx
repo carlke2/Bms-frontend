@@ -20,17 +20,11 @@ const UserManagementPage = lazy(() => import('@/pages/admin/UserManagementPage')
 const SystemSettingsPage = lazy(() => import('@/pages/admin/SystemSettingsPage'));
 const AnalyticsPage = lazy(() => import('@/pages/admin/AnalyticsPage'));
 const SystemReportPage = lazy(() => import('@/pages/admin/SystemReportPage'));
-const PartnerDashboardPage = lazy(() => import('@/pages/partner/PartnerDashboardPage'));
-const PartnerCaseDetailPage = lazy(() => import('@/pages/partner/PartnerCaseDetailPage'));
 const FacilitiesPage = lazy(() => import('@/pages/admin/FacilitiesPage'));
-const PartnersPage = lazy(() => import('@/pages/admin/PartnersPage'));
 const BulkSmsPage = lazy(() => import('@/pages/admin/BulkSmsPage'));
 const NatureOptionsPage = lazy(() => import('@/pages/admin/NatureOptionsPage'));
 const InventoryPage = lazy(() => import('@/pages/admin/InventoryPage'));
 const StandbyPage = lazy(() => import('@/pages/dispatcher/StandbyPage'));
-const PartnerAmbulancesPage = lazy(() => import('@/pages/admin/PartnerAmbulancesPage'));
-const GbvDashboardPage = lazy(() => import('@/pages/gbv/GbvDashboardPage'));
-const GbvCaseDetailPage = lazy(() => import('@/pages/gbv/GbvCaseDetailPage'));
 const ProfilePage = lazy(() => import('@/pages/shared/ProfilePage'));
 // Unauthenticated read-only display for the call-centre TV (token-gated).
 const WallboardDisplayPage = lazy(() => import('@/pages/public/WallboardDisplayPage'));
@@ -79,14 +73,6 @@ export const router = createBrowserRouter([
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN']}>
             <FacilitiesPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'admin/partners',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN']}>
-            <PartnersPage />
           </RoleGuard>
         ),
       },
@@ -204,14 +190,6 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'admin/partner-ambulances',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <PartnerAmbulancesPage />
-          </RoleGuard>
-        ),
-      },
-      {
         path: 'call-logs',
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
@@ -232,38 +210,6 @@ export const router = createBrowserRouter([
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'WATCHER', 'DISPATCHER']}>
             <NewIncidentWizard />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'partner/dashboard',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'PARTNER']}>
-            <PartnerDashboardPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'partner/incidents/:id',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'PARTNER']}>
-            <PartnerCaseDetailPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'gbv/dashboard',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER', 'PARTNER']}>
-            <GbvDashboardPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'gbv/cases/:id',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <GbvCaseDetailPage />
           </RoleGuard>
         ),
       },

@@ -15,11 +15,8 @@ import {
   LogOut,
   Hospital,
   Tag,
-  ShieldAlert as ShieldWarning,
-  Handshake,
   MessageSquareText as ChatText,
   Timer,
-  Truck,
   RadioTower as Broadcast,
   Fuel as GasPump,
   Package,
@@ -56,15 +53,12 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
       { label: 'Fuel Monitoring', path: '/fleet/fuel', Icon: GasPump, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
       { label: 'Standby', path: '/fleet/standby', Icon: Timer, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
       { label: 'Call Logs', path: '/call-logs', Icon: Phone, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
-      { label: 'GBV Register', path: '/gbv/dashboard', Icon: ShieldWarning, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER', 'PARTNER'] },
     ],
   },
   {
     title: 'Management',
     items: [
       { label: 'Personnel', path: '/admin/users', Icon: Users, roles: ['SUPER_ADMIN', 'ADMIN'] },
-      { label: 'Partners', path: '/admin/partners', Icon: Handshake, roles: ['SUPER_ADMIN', 'ADMIN'] },
-      { label: 'Partner Ambulances', path: '/admin/partner-ambulances', Icon: Truck, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
       { label: 'Facilities', path: '/admin/facilities', Icon: Hospital, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Nature Options', path: '/admin/nature-options', Icon: Tag, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Inventory', path: '/admin/inventory', Icon: Package, roles: ['SUPER_ADMIN', 'ADMIN'] },
@@ -77,12 +71,6 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
       { label: 'Analytics', path: '/admin/analytics', Icon: ChartLineUp, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER', 'PARTNER'] },
       { label: 'System Report', path: '/admin/system-report', Icon: FileBarChart, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'System Settings', path: '/admin/settings', Icon: Gear, roles: ['SUPER_ADMIN', 'ADMIN'] },
-    ],
-  },
-  {
-    title: 'Partner',
-    items: [
-      { label: 'Partner Dashboard', path: '/partner/dashboard', Icon: SquaresFour, roles: ['PARTNER'] },
     ],
   },
   {
