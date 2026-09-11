@@ -10,10 +10,6 @@ const DashboardPage = lazy(() => import('@/pages/dispatcher/DashboardPage'));
 const WallboardPage = lazy(() => import('@/pages/dispatcher/WallboardPage'));
 const QueuePage = lazy(() => import('@/pages/dispatcher/QueuePage'));
 const IncidentDetailPage = lazy(() => import('@/pages/dispatcher/IncidentDetailPage'));
-const FleetPage = lazy(() => import('@/pages/dispatcher/FleetPage'));
-const FleetChecklistsPage = lazy(() => import('@/pages/dispatcher/FleetChecklistsPage'));
-const FuelPage = lazy(() => import('@/pages/dispatcher/FuelPage'));
-const CallLogPage = lazy(() => import('@/pages/dispatcher/CallLogPage'));
 const NewIncidentWizard = lazy(() => import('@/pages/watcher/NewIncidentWizard'));
 const WatcherDashboardPage = lazy(() => import('@/pages/watcher/WatcherDashboardPage'));
 const UserManagementPage = lazy(() => import('@/pages/admin/UserManagementPage'));
@@ -22,9 +18,7 @@ const AnalyticsPage = lazy(() => import('@/pages/admin/AnalyticsPage'));
 const SystemReportPage = lazy(() => import('@/pages/admin/SystemReportPage'));
 const FacilitiesPage = lazy(() => import('@/pages/admin/FacilitiesPage'));
 const BulkSmsPage = lazy(() => import('@/pages/admin/BulkSmsPage'));
-const NatureOptionsPage = lazy(() => import('@/pages/admin/NatureOptionsPage'));
 const InventoryPage = lazy(() => import('@/pages/admin/InventoryPage'));
-const StandbyPage = lazy(() => import('@/pages/dispatcher/StandbyPage'));
 const ProfilePage = lazy(() => import('@/pages/shared/ProfilePage'));
 // Unauthenticated read-only display for the call-centre TV (token-gated).
 const WallboardDisplayPage = lazy(() => import('@/pages/public/WallboardDisplayPage'));
@@ -85,14 +79,6 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'admin/nature-options',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN']}>
-            <NatureOptionsPage />
-          </RoleGuard>
-        ),
-      },
-      {
         path: 'admin/inventory',
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN']}>
@@ -142,14 +128,6 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'fleet/fuel',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <FuelPage />
-          </RoleGuard>
-        ),
-      },
-      {
         path: 'queue',
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
@@ -162,38 +140,6 @@ export const router = createBrowserRouter([
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER', 'PARTNER']}>
             <IncidentDetailPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'fleet',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <FleetPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'fleet/checklists',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <FleetChecklistsPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'fleet/standby',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <StandbyPage />
-          </RoleGuard>
-        ),
-      },
-      {
-        path: 'call-logs',
-        element: (
-          <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <CallLogPage />
           </RoleGuard>
         ),
       },

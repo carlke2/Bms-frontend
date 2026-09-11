@@ -3,22 +3,16 @@ import { useAuthStore } from '@/stores/authStore';
 import { useNotificationStore } from '@/stores/notificationStore';
 import {
   LayoutGrid as SquaresFour,
-  Map as MapTrifold,
   List as ListBullets,
   Users,
   Settings as Gear,
   ChartLine as ChartLineUp,
-  Phone,
-  ClipboardList as ClipboardText,
   ChevronLeft,
   ChevronRight,
   LogOut,
   Hospital,
-  Tag,
   MessageSquareText as ChatText,
-  Timer,
   RadioTower as Broadcast,
-  Fuel as GasPump,
   Package,
   FileBarChart2 as FileBarChart,
 } from 'lucide-react';
@@ -48,11 +42,6 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
     title: 'Operations',
     items: [
       { label: 'Incident Feed', path: '/queue', Icon: ListBullets, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
-      { label: 'Fleet Management', path: '/fleet', Icon: MapTrifold, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
-      { label: 'Vehicle Checklists', path: '/fleet/checklists', Icon: ClipboardText, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
-      { label: 'Fuel Monitoring', path: '/fleet/fuel', Icon: GasPump, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
-      { label: 'Standby', path: '/fleet/standby', Icon: Timer, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
-      { label: 'Call Logs', path: '/call-logs', Icon: Phone, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
     ],
   },
   {
@@ -60,7 +49,6 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
     items: [
       { label: 'Personnel', path: '/admin/users', Icon: Users, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Facilities', path: '/admin/facilities', Icon: Hospital, roles: ['SUPER_ADMIN', 'ADMIN'] },
-      { label: 'Nature Options', path: '/admin/nature-options', Icon: Tag, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Inventory', path: '/admin/inventory', Icon: Package, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Bulk SMS', path: '/admin/sms', Icon: ChatText, roles: ['SUPER_ADMIN', 'ADMIN'] },
     ],
