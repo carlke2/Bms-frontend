@@ -15,12 +15,12 @@ import {
   RadioTower as Broadcast,
   Package,
   FileBarChart2 as FileBarChart,
+  CalendarDays,
 } from 'lucide-react';
 import { useActiveCalls } from '@/hooks/useActiveCalls';
 import { useIncidentQueueCount } from '@/hooks/useIncidentQueueCount';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { confirmDialog } from '@/lib/alert';
-import SidebarLogo from '@/assets/logos/nccg.jpg';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -136,12 +136,12 @@ function Sidebar({ collapsed, onToggleCollapse }: SidebarProps) {
             {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
           </button>
           <div className="brand-logo">
-            <img src={SidebarLogo} draggable={false} alt="Machakos County" />
+            <CalendarDays size={22} />
           </div>
           <div className="brand-text">
-            <b>Emergency Operations</b>
-            <span className="brand-org">Machakos County</span>
-            <span className="brand-tag">Command Centre</span>
+            <b>Boardroom Manager</b>
+            <span className="brand-org">Meeting Rooms</span>
+            <span className="brand-tag">Bookings</span>
           </div>
         </div>
 
