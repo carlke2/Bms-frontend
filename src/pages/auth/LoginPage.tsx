@@ -12,8 +12,6 @@ import { useAuthStore } from '@/stores/authStore';
 import { useNotificationStore } from '@/stores/notificationStore';
 import { Role } from '@/types/api';
 import { ROLE_ROUTES } from '@/components/dev/DevRoleSwitcher';
-import Logo1 from '@/assets/logos/malteser.png';
-import Logo2 from '@/assets/logos/nccg.jpg';
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -182,9 +180,8 @@ function LoginPage() {
       <div className="login-card fade-up">
         {/* Co-branded header */}
         <div className="login-cobrand">
-          <img src={Logo2} alt="Machakos County" draggable={false} style={{ height: 46, width: 'auto', objectFit: 'contain' }} />
+          <b style={{ fontSize: 22 }}>Boardroom Manager</b>
           <span className="login-cobrand-div" />
-          <img src={Logo1} alt="Malteser International" draggable={false} style={{ height: 38, width: 'auto', objectFit: 'contain' }} />
         </div>
 
         {/* Form body */}
@@ -239,7 +236,7 @@ function LoginPage() {
           ) : (
             <>
               <h1 className="login-title">Login console.</h1>
-              <p className="login-sub">Machakos County emergency dispatch console.</p>
+              <p className="login-sub">Sign in to manage boardroom bookings.</p>
 
               {/* Staff vs field crew tabs */}
               <div
@@ -291,7 +288,7 @@ function LoginPage() {
                         type="email"
                         autoComplete="username"
                         autoFocus
-                        placeholder="you@machakos.go.ke"
+                        placeholder="you@company.com"
                         style={errors.email ? { borderColor: 'var(--red)' } : undefined}
                       />
                       <Mail size={16} />
@@ -447,7 +444,7 @@ function LoginPage() {
         <div className="login-foot">
           <ShieldCheck size={15} />
             Authorized personnel only · All activity is logged and audited
-          <p className="login-copy">© {new Date().getFullYear()} Machakos County Government · In partnership with Malteser International</p>
+          <p className="login-copy">© {new Date().getFullYear()} Boardroom Manager</p>
         </div>
       </div>
     </div>
