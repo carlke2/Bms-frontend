@@ -181,7 +181,6 @@ function LoginPage() {
         {/* Co-branded header */}
         <div className="login-cobrand">
           <b style={{ fontSize: 22 }}>Boardroom Manager</b>
-          <span className="login-cobrand-div" />
         </div>
 
         {/* Form body */}
