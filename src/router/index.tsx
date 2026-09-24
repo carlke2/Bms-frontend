@@ -16,7 +16,7 @@ const UserManagementPage = lazy(() => import('@/pages/admin/UserManagementPage')
 const SystemSettingsPage = lazy(() => import('@/pages/admin/SystemSettingsPage'));
 const AnalyticsPage = lazy(() => import('@/pages/admin/AnalyticsPage'));
 const SystemReportPage = lazy(() => import('@/pages/admin/SystemReportPage'));
-const FacilitiesPage = lazy(() => import('@/pages/admin/FacilitiesPage'));
+const RoomsPage = lazy(() => import('@/pages/admin/RoomsPage'));
 const BulkSmsPage = lazy(() => import('@/pages/admin/BulkSmsPage'));
 const InventoryPage = lazy(() => import('@/pages/admin/InventoryPage'));
 const ProfilePage = lazy(() => import('@/pages/shared/ProfilePage'));
@@ -63,10 +63,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'admin/facilities',
+        path: 'admin/rooms',
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN']}>
-            <FacilitiesPage />
+            <RoomsPage />
           </RoleGuard>
         ),
       },
