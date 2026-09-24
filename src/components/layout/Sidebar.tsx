@@ -10,7 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
-  Hospital,
+  Building2,
   MessageSquareText as ChatText,
   RadioTower as Broadcast,
   Package,
@@ -48,7 +48,7 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
     title: 'Management',
     items: [
       { label: 'Personnel', path: '/admin/users', Icon: Users, roles: ['SUPER_ADMIN', 'ADMIN'] },
-      { label: 'Facilities', path: '/admin/facilities', Icon: Hospital, roles: ['SUPER_ADMIN', 'ADMIN'] },
+      { label: 'Rooms', path: '/admin/rooms', Icon: Building2, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Inventory', path: '/admin/inventory', Icon: Package, roles: ['SUPER_ADMIN', 'ADMIN'] },
       { label: 'Bulk SMS', path: '/admin/sms', Icon: ChatText, roles: ['SUPER_ADMIN', 'ADMIN'] },
     ],
