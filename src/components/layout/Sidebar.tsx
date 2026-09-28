@@ -16,6 +16,8 @@ import {
   Package,
   FileBarChart2 as FileBarChart,
   CalendarDays,
+  CalendarPlus,
+  CalendarCheck,
 } from 'lucide-react';
 import { useActiveCalls } from '@/hooks/useActiveCalls';
 import { useIncidentQueueCount } from '@/hooks/useIncidentQueueCount';
@@ -42,6 +44,13 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
     title: 'Operations',
     items: [
       { label: 'Incident Feed', path: '/queue', Icon: ListBullets, roles: ['SUPER_ADMIN', 'ADMIN', 'DISPATCHER'] },
+    ],
+  },
+  {
+    title: 'Bookings',
+    items: [
+      { label: 'Book a Room', path: '/bookings/new', Icon: CalendarPlus, roles: ALL_ROLES },
+      { label: 'My Bookings', path: '/bookings/mine', Icon: CalendarCheck, roles: ALL_ROLES },
     ],
   },
   {
