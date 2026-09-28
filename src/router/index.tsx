@@ -20,6 +20,8 @@ const RoomsPage = lazy(() => import('@/pages/admin/RoomsPage'));
 const BulkSmsPage = lazy(() => import('@/pages/admin/BulkSmsPage'));
 const InventoryPage = lazy(() => import('@/pages/admin/InventoryPage'));
 const ProfilePage = lazy(() => import('@/pages/shared/ProfilePage'));
+const BookRoomPage = lazy(() => import('@/pages/bookings/BookRoomPage'));
+const MyBookingsPage = lazy(() => import('@/pages/bookings/MyBookingsPage'));
 // Unauthenticated read-only display for the call-centre TV (token-gated).
 const WallboardDisplayPage = lazy(() => import('@/pages/public/WallboardDisplayPage'));
 
@@ -164,6 +166,14 @@ export const router = createBrowserRouter([
         // already requires a token), not gated by RoleGuard like the role-scoped pages above.
         path: 'profile',
         element: <ProfilePage />,
+      },
+      {
+        path: 'bookings/new',
+        element: <BookRoomPage />,
+      },
+      {
+        path: 'bookings/mine',
+        element: <MyBookingsPage />,
       },
       {
         path: '*',
