@@ -18,6 +18,7 @@ import {
   CalendarDays,
   CalendarPlus,
   CalendarCheck,
+  ClipboardCheck,
 } from 'lucide-react';
 import { useActiveCalls } from '@/hooks/useActiveCalls';
 import { useIncidentQueueCount } from '@/hooks/useIncidentQueueCount';
@@ -51,6 +52,7 @@ const menuSections: { title?: string; items: NavItem[] }[] = [
     items: [
       { label: 'Book a Room', path: '/bookings/new', Icon: CalendarPlus, roles: ALL_ROLES },
       { label: 'My Bookings', path: '/bookings/mine', Icon: CalendarCheck, roles: ALL_ROLES },
+      { label: 'Approvals', path: '/admin/approvals', Icon: ClipboardCheck, roles: ['SUPER_ADMIN', 'ADMIN'] },
     ],
   },
   {
