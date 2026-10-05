@@ -6,7 +6,7 @@ import LoginPage from '@/pages/auth/LoginPage';
 
 // Heavy authenticated pages are code-split so they load on demand (keeps the
 // initial bundle small). The Suspense boundary lives in AppShell.
-const DashboardPage = lazy(() => import('@/pages/dispatcher/DashboardPage'));
+const BookingsDashboardPage = lazy(() => import('@/pages/bookings/BookingsDashboardPage'));
 const WallboardPage = lazy(() => import('@/pages/dispatcher/WallboardPage'));
 const QueuePage = lazy(() => import('@/pages/dispatcher/QueuePage'));
 const IncidentDetailPage = lazy(() => import('@/pages/dispatcher/IncidentDetailPage'));
@@ -118,7 +118,7 @@ export const router = createBrowserRouter([
         path: 'dashboard',
         element: (
           <RoleGuard allowed={['SUPER_ADMIN', 'ADMIN', 'DISPATCHER']}>
-            <DashboardPage />
+            <BookingsDashboardPage />
           </RoleGuard>
         ),
       },
